@@ -10,30 +10,22 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <webdrivermanager.version>4.3.1</webdrivermanager.version>
+        <webdrivermanager.version>5.0.3</webdrivermanager.version> <!-- Updated version -->
     </properties>
     <build>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.8.1</version> <!-- Updated version for Java 11 compatibility -->
                 <configuration>
-                    <source>10</source>
-                    <target>10</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
-				<configuration>
-				    <suiteXmlFiles>
-					<suiteXmlFile>src/test/java/testng.xml</suiteXmlFile>
-				    </suiteXmlFiles>
-				    <systemPropertyVariables>
-				      <testng.dtd.http>true</testng.dtd.http>
-				    </systemPropertyVariables>
-				</configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Updated version for Java 11 compatibility -->
             </plugin>
             <plugin>
                 <groupId>net.masterthought</groupId>
@@ -54,12 +46,11 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
     <dependencies>
-
+        <!-- Dependencies remain the same -->
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
@@ -68,7 +59,6 @@
             <version>6.9.1</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -76,7 +66,7 @@
             <version>6.9.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
@@ -98,8 +88,6 @@
             <version>2.15</version>
         </dependency>
 
-
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -108,17 +96,13 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-	<properties>
-	    <maven.compiler.source>11</maven.compiler.source>
-	    <maven.compiler.target>11</maven.compiler.target>
-	    <!-- Update the WebDriverManager version to the latest version -->
-	    <webdrivermanager.version>5.0.3</webdrivermanager.version>
-	</properties>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.0.0-beta-2</version>
+        </dependency>
 
-
-
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -132,7 +116,7 @@
             <version>5.5.2</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
